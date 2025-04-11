@@ -1,0 +1,25 @@
+# Initialize the run
+/run/initialize
+
+# Set particle type to proton
+#/gps/particle proton
+
+# Set energy to 3 MeV
+#/gps/energy 3 MeV
+
+# Set beam position to a point at (0, 0, 50 cm)
+#/gps/position 0 0 40 cm
+
+# Set beam direction along the -z axis
+#/gps/direction 0 0 -1
+
+# Set beam diameter (use a Gaussian or beam shape)
+#/gps/pos/type Beam
+#/gps/pos/shape Circle
+#/gps/pos/radius 2.5 mm  # Half of 5 mm diameter
+
+/beam/energy/meanEnergy 10 MeV
+/beam/energy/sigmaEnergy 0.2 MeV
+
+/beam/position/Xposition/sigmaX 2 mm
+/beam/position/Yposition/sigmaY 2 mm

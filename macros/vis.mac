@@ -1,0 +1,42 @@
+# vis.mac - Visualization macro
+/run/initialize
+# Use the OpenGL visualization engine
+/vis/open OGL 600x600-0+0
+
+# Draw the detector components
+/vis/drawVolume
+
+# Set the camera to view the entire setup
+/vis/viewer/set/viewpointThetaPhi 110 150
+/vis/viewer/zoom 1.2
+
+# Show trajectories of particles
+/vis/scene/add/trajectories
+
+# Optional: Add hits to the visualization
+#/vis/scene/add/hits
+
+# Enable automatic refreshing of the viewer
+/vis/viewer/set/autoRefresh true
+
+# Draw the scene with the specified settings
+/vis/scene/add/volume
+/vis/sceneHandler/attach
+/vis/viewer/flush
+
+# Optional: To visualize step by step during events
+#/tracking/verbose 1
+
+# Start the visualizing session
+#/vis/scene/add/axes 0 0 0 100 mm
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+
+# Draw the trajectories in a specific color based on the particle
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+/vis/scene/endOfEventAction accumulate 1000000
+
+/control/execute macros/gps.mac

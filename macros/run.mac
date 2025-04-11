@@ -1,0 +1,22 @@
+#
+# Macro file of "Pro.cc"
+#
+# Change the default number of workers (in multi-threading mode) 
+#/run/numberOfThreads 4
+#
+# Initialize kernel
+#/vis/disable
+/run/initialize
+#
+/control/verbose 0
+/tracking/verbose 0
+#
+#
+/beam/energy/meanEnergy 10 MeV
+/beam/energy/sigmaEnergy 0.2 MeV
+
+/beam/position/Xposition/sigmaX 2 mm
+/beam/position/Yposition/sigmaY 2 mm
+
+/run/printProgress 10000
+/run/beamOn 1000000
